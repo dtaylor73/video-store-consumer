@@ -4,17 +4,20 @@ import axios from 'axios';
 
 const Customer = (props) => {
 
+
   return (
     <div className="customer">
       <div className="content">
+        <div className="customer-info">{props.name}</div>
         <div className="customer-info">{props.address}</div>
         <div className="customer-info">{props.city}, {props.state}</div>
         <div className="customer-info">{props.postal}</div>
-
         <div className="customer-info">{props.phone}</div>
         <div className="customer-info">${props.account_credit} account credit</div>
       </div>
-    </div>
+    {/* <button
+      onClick={props.CustomerNameCallback(props.name, props.id)} type="button"></button> */}
+      </div>
   )
 }
 
