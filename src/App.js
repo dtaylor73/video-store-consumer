@@ -1,5 +1,9 @@
-import React from "react";
-import Movie from './MovieLibrary';
+import React, {Component} from "react";
+import RentalLibrary from './components/RentalLibrary';
+import MovieSearch from './components/MovieSearch';
+// import CustomerList from './CustomerList';
+
+
 
 import {
   BrowserRouter as Router,
@@ -8,55 +12,65 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Movie Search">Movie Search</Link>
-            </li>
-            <li>
-              <Link to="/Movie Library">Movie Library</Link>
-            </li>
-            <li>
-              <Link to="/Customers">Customers</Link>
-            </li>
-          </ul>
-        </nav>
+class App extends Component {
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        {/*This means that you should put <Route>s with more specific (typically longer) paths before 
-        less-specific ones*/}
-        <Switch>
-          <Route path="/MovieSearch">
-            <MovieSearch />
-          </Route>
-          <Route path="/MovieLibrary">
-            <MovieLibrary />
-          </Route>
-          <Route path="/Customers" component={Customers}>
-            <Customers />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentMovie: ''
+    };
+  }
+
+  selectMovieApp = (movie) => {
+   console.log(movie)
+    this.setState({
+      currentMovie: movie 
+    })
+    console.log(this.state.currentMovie)
+  }
+
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/MovieSearch">Movie Search</Link>
+              </li>
+              <li>
+                <Link to="/RentalLibrary">Rental Library</Link>
+              </li>
+              {/* <li>
+                <Link to="/CustomerList">CustomerList</Link>
+              </li> */}
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          {/*This means that you should put <Route>s with more specific (typically longer) paths before 
+          less-specific ones*/}
+          <Switch>
+            <Route path="/MovieSearch">
+              <MovieSearch />
+            </Route>
+            <Route path="/RentalLibrary">
+              <RentalLibrary selectMovieApp={this.selectMovieApp}/>
+            </Route>
+            {/* <Route path="/CustomerList" component={CustomerList}>
+              <CustomerList />
+            </Route> */}
+          </Switch>
+        </div>
+      </Router>
+    );
+  };
 }
 
-// function MovieSearch() {
-//   return <h2>MovieSearch</h2>;
-// }
+export default App;
 
-// function MovieLibrary() {
-//   return <h2>MovieLibrary</h2>;
-// }
-
-// function Customers() {
-//   return <h2>Customers</h2>;
-// }
