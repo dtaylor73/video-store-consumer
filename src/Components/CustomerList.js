@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Customer from './Customer.js';
-
-// import './Customer.css';
-
-
 export default class CustomerList extends Component {
   constructor() {
     super();
@@ -16,8 +12,6 @@ export default class CustomerList extends Component {
   }
   
   componentDidMount() {
-    // API get request here
-    console.log("customer")
     this.getCustomers()
   }
 
@@ -38,16 +32,16 @@ export default class CustomerList extends Component {
     const customers = this.state.customers.map((customer) => {
       return (
         <Customer
-          key = { customer.id }
-          name = { customer.name }
-          id = { customer.id }
-          address = { customer.address }
-          city = { customer.city }
-          state = { customer.state }
-          postal_code = { customer.postal_code }
-          phone = { customer.phone }
-          account_credit = { customer.account_credit }
-          movies_checked_out_count = { customer.movies_checked_out_count }
+          key = {customer.id}
+          name = {customer.name}
+          id = {customer.id}
+          address = {customer.address}
+          city = {customer.city}
+          state = {customer.state}
+          postal_code = {customer.postal_code}
+          phone = {customer.phone}
+          account_credit = {customer.account_credit}
+          movies_checked_out_count = {customer.movies_checked_out_count}
         />
       );
     });
@@ -55,14 +49,10 @@ export default class CustomerList extends Component {
     return (
       <div>
         {customers}
-        {/* <NewCardForm addCard={this.addCard} /> */}
       </div>
     )
   }
 }
 
 CustomerList.propTypes = {
-
 };
-
-

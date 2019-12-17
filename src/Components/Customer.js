@@ -7,12 +7,12 @@ const Customer = (props) => {
   return (
     <div className="customer">
       <div className="content">
-        <div className="customer__content-info">{props.address}</div>
-        <div className="customer__content-info">{props.city}, {props.state}</div>
-        <div className="customer__content-info">{props.postal}</div>
+        <div className="customer-info">{props.address}</div>
+        <div className="customer-info">{props.city}, {props.state}</div>
+        <div className="customer-info">{props.postal}</div>
 
-        <div className="customer__content-info">{props.phone}</div>
-        <div className="customer__content-info">${props.account_credit} account credit</div>
+        <div className="customer-info">{props.phone}</div>
+        <div className="customer-info">${props.account_credit} account credit</div>
       </div>
     </div>
   )
