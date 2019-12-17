@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Customer from './Customer.js';
 export default class CustomerList extends Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {
+
       customers: []
-    };
+    } 
+
   }
   
   componentDidMount() {
     this.getCustomers()
   }
+
 
   getCustomers = () => {
     axios.get('http://localhost:3000/customers')
@@ -27,6 +29,8 @@ export default class CustomerList extends Component {
         this.setState({ error: error.message });
       });
   }
+
+  
      
   render() {
     const customers = this.state.customers.map((customer) => {
@@ -42,7 +46,7 @@ export default class CustomerList extends Component {
           phone = {customer.phone}
           account_credit = {customer.account_credit}
           movies_checked_out_count = {customer.movies_checked_out_count}
-          // customerNameCallback={this.props.customerNameCallback}
+          customerNameCallback={() => this.props.customerNameCallback(customer)}
         />
       );
     });

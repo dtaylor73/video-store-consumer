@@ -4,6 +4,9 @@ import axios from 'axios';
 
 const Customer = (props) => {
 
+// const onClick = () => {
+//   props.customerNameCallback()
+// }
 
   return (
     <div className="customer">
@@ -15,8 +18,8 @@ const Customer = (props) => {
         <div className="customer-info">{props.phone}</div>
         <div className="customer-info">${props.account_credit} account credit</div>
       </div>
-    {/* <button
-      onClick={props.CustomerNameCallback(props.name, props.id)} type="button"></button> */}
+    <button
+        className="customer__select" onClick={props.customerNameCallback} type="button">Select</button>
       </div>
   )
 }
