@@ -16,18 +16,19 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       currentCustomer: ''
     };
   }
-
   customerNameCallback = (customer) => {
     // console.log(customer)
     // console.log(id)
+    // console.log(customer)
     this.setState({
       currentCustomer: customer
     });
-    console.log(this.state.currentCustomer)
+    // console.log(this.state.currentCustomer)
   }
 
   render() {
