@@ -21,6 +21,8 @@ class App extends Component {
       currentCustomer: '',
       currentMovie: ''
     };
+
+    console.log(this.state.currentMovies)
   }
   customerNameCallback = (customer) => {
     this.setState({
