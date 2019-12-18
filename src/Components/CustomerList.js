@@ -30,7 +30,6 @@ export default class CustomerList extends Component {
       });
   }
 
-  
      
   render() {
     const customers = this.state.customers.map((customer) => {

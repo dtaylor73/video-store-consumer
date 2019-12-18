@@ -3,6 +3,7 @@ import './App.css';
 import RentalLibrary from './Components/RentalLibrary.js';
 import MovieSearch from './Components/MovieSearch.js';
 import CustomerList from './Components/CustomerList.js';
+import Checkout from './Components/Checkout.js';
 
 import Customer from './Components/Customer.js';
 import React, {Component} from "react";
@@ -24,11 +25,11 @@ class App extends Component {
 
     console.log(this.state.currentMovies)
   }
-  customerNameCallback = (customer) => {
+  selectCustomerApp = (customer) => {
     this.setState({
       currentCustomer: customer,
-      currentMovie: ''
     });
+    
   }
 
   selectMovieApp = (movie) => {
@@ -58,6 +59,10 @@ class App extends Component {
                 <Link to="/CustomerList">Customer List</Link>
               </li>
             </ul>
+            <Checkout 
+              currentCustomer={this.state.currentCustomer}
+              currentMovie={this.state.currentMovie}
+            />
           </nav>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -70,7 +75,7 @@ class App extends Component {
               <MovieSearch /> 
             </Route>
             <Route path="/CustomerList">
-              <CustomerList customerNameCallback={this.customerNameCallback} /> 
+              <CustomerList customerNameCallback={this.selectCustomerApp} /> 
             </Route>
           </Switch>
         </div>

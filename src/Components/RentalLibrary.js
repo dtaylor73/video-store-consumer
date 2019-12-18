@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Movie from './Movie';
+import Checkout from './Checkout'
 
 class RentalLibrary extends Component {
 
