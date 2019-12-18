@@ -29,6 +29,16 @@ class App extends Component {
       currentCustomer: customer
     });
     // console.log(this.state.currentCustomer)
+      currentMovie: ''
+    };
+  }
+
+  selectMovieApp = (movie) => {
+   console.log(movie)
+    this.setState({
+      currentMovie: movie 
+    })
+    console.log(this.state.currentMovie)
   }
 
   render() {
@@ -75,12 +85,42 @@ class App extends Component {
              />
               {/* {`this is your current customer! ${this.state.currentCustomer.name}`} */}
             </Route>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/MovieSearch">Movie Search</Link>
+              </li>
+              <li>
+                <Link to="/RentalLibrary">Rental Library</Link>
+              </li>
+              {/* <li>
+                <Link to="/CustomerList">CustomerList</Link>
+              </li> */}
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          {/*This means that you should put <Route>s with more specific (typically longer) paths before 
+          less-specific ones*/}
+          <Switch>
+            <Route path="/MovieSearch">
+              <MovieSearch />
+            </Route>
+            <Route path="/RentalLibrary">
+              <RentalLibrary selectMovieApp={this.selectMovieApp}/>
+            </Route>
+            {/* <Route path="/CustomerList" component={CustomerList}>
+              <CustomerList />
+            </Route> */}
           </Switch>
         </div>
       </Router>
     );
-  }
+  };
 }
 
 
 export default App;
+
