@@ -4,6 +4,7 @@ import RentalLibrary from './Components/RentalLibrary.js';
 import MovieSearch from './Components/MovieSearch.js';
 import CustomerList from './Components/CustomerList.js';
 import Checkout from './Components/Checkout.js';
+// import Checkout from './Components/Checkout';
 
 import Customer from './Components/Customer.js';
 import React, {Component} from "react";
@@ -13,6 +14,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
 class App extends Component {
 
   constructor(props) {
@@ -22,8 +24,6 @@ class App extends Component {
       currentCustomer: '',
       currentMovie: ''
     };
-
-    console.log(this.state.currentMovies)
   }
   selectCustomerApp = (customer) => {
     this.setState({
