@@ -11,6 +11,8 @@ class RentalLibrary extends Component {
     this.state = {
       movies: []
     }
+
+    console.log(this.state.current)
   }
 
   componentDidMount() {  

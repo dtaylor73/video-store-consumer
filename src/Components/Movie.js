@@ -14,7 +14,9 @@ class Movie extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
+      
       <section>
         <p>{this.props.title}</p>
         <p>{this.props.overview}</p>
