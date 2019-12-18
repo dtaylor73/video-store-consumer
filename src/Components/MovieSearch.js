@@ -13,23 +13,26 @@ class MovieSearch extends Component {
 
     this.state = {
       movieTitle: '',
-      results: []
+      results: [],
+      error: ''
     }
   }
 
   
   getMovies = (movieTitle) => {
 
-    axios.get(`http://localhost:3000/movies/${movieTitle}`)
+    axios.get(`http://localhost:3000/movies/?query=<${movieTitle}>`)
       .then((response) => {
         this.setState({ 
-          results: response.data 
+          results: Array.isArray(response.data) ? response.data : [ response.data ]
         });
       })
       .catch((error) => {
         this.setState({
           error: error.message 
         });
+
+        
       });
   }
 
@@ -54,10 +57,6 @@ class MovieSearch extends Component {
     )
 
     // state is already set when we get to this function. 
-
-
-    
-
 
     this.setState({
       movieTitle: '',
