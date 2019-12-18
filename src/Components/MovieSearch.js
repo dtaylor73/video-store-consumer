@@ -69,7 +69,6 @@ class MovieSearch extends Component {
   // }
 
   makeMovieResultsCollection () {
-    console.log(this.state.results)
     const results = this.state.results.map((result, i) => {
       return <MovieResults
         title={result.title}
@@ -77,11 +76,10 @@ class MovieSearch extends Component {
         overview={result.overview}
         image={result.image_url}
         key={i}
-        addToRentalLibraryCallback={this.addToRentalLibrary}
+        // addToRentalLibraryCallback={this.addToRentalLibrary}
       />;
     }
     );
-    console.log(results)
     return results
   }
 
