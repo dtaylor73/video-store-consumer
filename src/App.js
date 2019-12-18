@@ -46,7 +46,7 @@ class App extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home Sample</Link>
               </li>
               <li>
                 <Link to="/MovieSearch">Movie Search</Link>
