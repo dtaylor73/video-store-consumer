@@ -12,7 +12,7 @@ class RentalLibrary extends Component {
       movies: []
     }
 
-    console.log(this.state.current)
+    console.log(this.state.movies)
   }
 
   componentDidMount() {  
@@ -49,7 +49,7 @@ class RentalLibrary extends Component {
         key={i}
         onSelectClickCallback={this.selectMovie}
       />;
-      // what does deleteCard look like when its passed into deleteCardCallback
+      console.log(movies)
     }
     );
     return movies

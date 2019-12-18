@@ -75,12 +75,13 @@ class MovieSearch extends Component {
         title={result.title}
         id={result.id}
         overview={result.overview}
-        inventory={result.inventory}
+        image={result.image_url}
         key={i}
         addToRentalLibraryCallback={this.addToRentalLibrary}
       />;
     }
     );
+    console.log(results)
     return results
   }
 

@@ -10,6 +10,10 @@ const MovieResults = (props) => {
     <div>
       <p>{props.title}</p>
       <p>{props.overview}</p>
+      <img src={props.image}/>
+
+
+      {/* <button onClick={this.onSelectClick}>Select</button> */}
     </div>
   )
 }
