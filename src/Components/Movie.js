@@ -10,12 +10,8 @@ class Movie extends Component {
   }
 
   onSelectClick = () => {
-    console.log('hello')
-    console.log(this.props)
     return this.props.onSelectClickCallback(this.props)
   }
-
-  
 
   render() {
     return (
