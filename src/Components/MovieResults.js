@@ -6,12 +6,15 @@ import PropTypes from 'prop-types';
 
 const MovieResults = (props) => {
   
+  const onSelectClick = () => {
+    props.addToRentalLibrary(this.props.id)
+  }
+
   return (
     <div>
       <p>{props.title}</p>
       <p>{props.overview}</p>
       <img src={props.image}/>
-
 
       {/* <button onClick={this.onSelectClick}>Select</button> */}
     </div>

@@ -64,9 +64,9 @@ class MovieSearch extends Component {
     // maybe this can hold the call to the method with the axios call
   }
 
-  addToRentalLibrary = (movie) => {
+  // addToRentalLibrary = (movieId) => {
 
-  }
+  // }
 
   makeMovieResultsCollection () {
     console.log(this.state.results)
