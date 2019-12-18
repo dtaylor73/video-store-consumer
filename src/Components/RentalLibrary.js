@@ -38,7 +38,6 @@ class RentalLibrary extends Component {
     return this.props.selectMovieApp(movie)
   }
 
-
   makeMovieCollection () {
     const movies = this.state.movies.map((movie, i) => {
       return <Movie
