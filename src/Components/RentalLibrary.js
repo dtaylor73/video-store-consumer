@@ -59,7 +59,9 @@ class RentalLibrary extends Component {
     return (
       <section>
         <h2>Rental Library</h2>
+        <section className="rentals">
         {this.makeMovieCollection()}
+        </section>
       </section>
     )
   }

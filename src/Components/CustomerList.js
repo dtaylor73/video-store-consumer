@@ -6,10 +6,8 @@ export default class CustomerList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       customers: []
     } 
-
   }
   
   componentDidMount() {
@@ -34,6 +32,7 @@ export default class CustomerList extends Component {
   render() {
     const customers = this.state.customers.map((customer) => {
       return (
+          
         <Customer
           key = {customer.id}
           name = {customer.name}
@@ -47,13 +46,28 @@ export default class CustomerList extends Component {
           movies_checked_out_count = {customer.movies_checked_out_count}
           customerNameCallback={() => this.props.customerNameCallback(customer)}
         />
+        
       );
     });
 
     return (
-      <div>
-        {customers}
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Id</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Account_credit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {customers}
+        </tbody>
+    </table>
     )
   }
 }

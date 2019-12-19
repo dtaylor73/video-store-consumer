@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.rentals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 30%;
+  display: inline-block;
+}

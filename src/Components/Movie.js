@@ -17,11 +17,18 @@ class Movie extends Component {
     console.log(this.props)
     return (
       
-      <section>
-        <p>{this.props.title}</p>
-        <p>{this.props.overview}</p>
-        <button onClick={this.onSelectClick}>Select</button>
-      </section>
+      // <section>
+      //   <p>{this.props.title}</p>
+      //   <p>{this.props.overview}</p>
+      //   <button onClick={this.onSelectClick}>Select</button>
+      // </section>
+      <div className="card">
+          <div className="card-body">
+          <h5>{this.props.title}</h5>
+          <p>{this.props.overview}</p>
+          <button onClick={this.onSelectClick}>Select</button>
+          </div>
+     </div>
     )
   }
 }

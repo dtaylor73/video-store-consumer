@@ -9,18 +9,18 @@ const Customer = (props) => {
 // }
 
   return (
-    <div className="customer">
-      <div className="content">
-        <div className="customer-info">{props.name}</div>
-        <div className="customer-info">{props.address}</div>
-        <div className="customer-info">{props.city}, {props.state}</div>
-        <div className="customer-info">{props.postal}</div>
-        <div className="customer-info">{props.phone}</div>
-        <div className="customer-info">${props.account_credit} account credit</div>
-      </div>
-    <button
+    
+    <tr>
+      <td> {props.name}</td>
+      <td> {props.id}</td>
+      <td> {props.address}</td>
+      <td> {props.city}</td>
+      <td>{props.state}</td>
+      <td>{props.phone}</td>
+      <td>${props.account_credit}</td>
+      <button
         className="customer__select" onClick={props.customerNameCallback} type="button">Select</button>
-      </div>
+    </tr>
   )
 }
 
