@@ -4,6 +4,7 @@ import RentalLibrary from './Components/RentalLibrary.js';
 import MovieSearch from './Components/MovieSearch.js';
 import CustomerList from './Components/CustomerList.js';
 import Checkout from './Components/Checkout.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Checkout from './Components/Checkout';
 
 import Customer from './Components/Customer.js';
@@ -24,6 +25,7 @@ class App extends Component {
       currentCustomer: '',
       currentMovie: ''
     };
+
   }
   selectCustomerApp = (customer) => {
     this.setState({
@@ -31,6 +33,15 @@ class App extends Component {
     });
     
   }
+
+  clearState = () =>{
+    this.setState({
+      currentCustomer:'',
+      currentMovie: ''
+    })
+  }
+
+
 
   selectMovieApp = (movie) => {
    console.log(movie)
@@ -62,6 +73,7 @@ class App extends Component {
             <Checkout 
               currentCustomer={this.state.currentCustomer}
               currentMovie={this.state.currentMovie}
+              clearState= {this.clearState}
             />
           </nav>
           {/* A <Switch> looks through its children <Route>s and

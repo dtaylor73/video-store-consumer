@@ -7,30 +7,30 @@ export default class Checkout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      errors: undefined,
-      checkoutMessage: ''
+    checkoutMessage: ''
     }
 
   }
   checkOutMovie = () => {
     const due = new Date('December 17, 2020')
-    axios.post(`http://localhost:3000/rentals/${this.props.currentMovie.title}/check-out`, { customer_id: this.props.currentCustomer.id, due_date: due})
-   
+    const failCheckoutMovie = `You must select a movie and a customer to checkout!!!`
+    if (!this.props.currentMovie || !this.props.currentCustomer){
+      this.setState({ checkoutMessage: failCheckoutMovie });
+    }
+    else if (this.props.currentMovie && this.props.currentCustomer){
+      axios.post(`http://localhost:3000/rentals/${this.props.currentMovie.title}/check-out`, { customer_id: this.props.currentCustomer.id, due_date: due })
+        .then((response) => {
+          const successCheckout = `Movie has been checked out`
+          console.log(successCheckout)
 
-      .then((response) => {
-        const successCheckout = `Movie has been checked out`
-        console.log(successCheckout)
-
-        this.setState({checkoutMessage: successCheckout})
-      })
-      .catch((error) => {
-
-        this.setState({ error: error.message });
-
-      });
+          this.setState({ checkoutMessage: successCheckout })
+          this.props.clearState()
+        })
+        .catch((error) => {
+          this.setState({ error: error });
+        });
+    }; 
   }
-
-
   render() {
     return(
       <section>
