@@ -7,10 +7,8 @@ export default class CustomerList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       customers: []
     } 
-
   }
   
   componentDidMount() {

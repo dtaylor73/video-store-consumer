@@ -38,18 +38,17 @@ class MovieResults extends Component {
 
   render () {
     return (
-    <div>
-      <div className='alert'>{this.state.addedMovie}</div>
-      <div className="card">
-        <img className="card-img-top" src={this.props.image}/>
+
+
+        <div className="card">
+          <img className="card-img-top" src={this.props.image}/>
           <div className="card-body">
             <p>{this.props.title}</p>
             <p>{this.props.overview}</p>
-            <button className='btn btn-primary' onClick={this.onSelectClick}>Add movie to rental library</button>
+            <button onClick={this.onSelectClick}>Add movie to rental library</button>
+            {this.state.addedMovie}
           </div>
-      </div>
-    </div>
-
+        </div>
     );
   }
 }
