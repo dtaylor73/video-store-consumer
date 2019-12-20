@@ -107,8 +107,9 @@ class MovieSearch extends Component {
             // onClick={this.onSubmitHandler}
           />
         </form>
-
-        {this.makeMovieResultsCollection()}
+        <section>
+          {this.makeMovieResultsCollection()}
+        </section>
       </section>
     );
   }
