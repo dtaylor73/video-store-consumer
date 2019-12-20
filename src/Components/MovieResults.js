@@ -17,16 +17,13 @@ class MovieResults extends Component {
   }
 
   onSelectClick = (event) => {
-    // pass in movie details to this method 
-    // and then call the the addmovie function that will make the post request.
+  
     this.addMovieToRentalLibrary({
       title: this.props.title,
       overview: this.props.overview,
       image: this.props.image
     })
-    // console.log(this.props.title)
-    // console.log(this.props.overview)
-    // console.log(this.props.image)
+ 
   }
 
   addMovieToRentalLibrary = (movie) => {

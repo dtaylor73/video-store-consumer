@@ -4,10 +4,6 @@ import axios from 'axios';
 
 const Customer = (props) => {
 
-// const onClick = () => {
-//   props.customerNameCallback()
-// }
-
   return (
     
     <tr>
