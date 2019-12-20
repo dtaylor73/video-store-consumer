@@ -87,7 +87,6 @@ class MovieSearch extends Component {
     return (
       <section>
         <h2>Movie Search</h2>
-
         <form onSubmit={this.onSubmitHandler}>
 
           <h3>Search Movie</h3>
@@ -110,8 +109,9 @@ class MovieSearch extends Component {
             // onClick={this.onSubmitHandler}
           />
         </form>
-
+        <section className="search">
         {this.makeMovieResultsCollection()}
+        </section>
       </section>
     );
   }

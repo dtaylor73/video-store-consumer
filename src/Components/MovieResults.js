@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+
 // From the movie search page, I can search for a movie by title from the external API
 // From the movie search results, I can add a movie from the search results to the rental library
 
@@ -48,14 +49,22 @@ class MovieResults extends Component {
 
   render () {
     return (
-      <div>
-        <p>{this.props.title}</p>
-        <p>{this.props.overview}</p>
-        <img src={this.props.image}/>
+      // <div>
+      //   <p>{this.props.title}</p>
+      //   <p>{this.props.overview}</p>
+      //   <img src={this.props.image}/>
 
-        <button onClick={this.onSelectClick}>Add movie to rental library</button>
-        {this.state.addedMovie}
+      //   <button onClick={this.onSelectClick}>Add movie to rental library</button>
+      //   {this.state.addedMovie}
 
+        <div className="card">
+        <img className="card-img-top" src={this.props.image}/>
+          <div className="card-body">
+          <p>{this.props.title}</p>
+          <p>{this.props.overview}</p>
+          <button onClick={this.onSelectClick}>Add movie to rental library</button>
+          {this.state.addedMovie}
+          </div>
       </div>
     );
   }

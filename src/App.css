@@ -32,7 +32,23 @@
   flex-wrap: wrap;
 }
 
+.search {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 .card {
   width: 30%;
   display: inline-block;
+}
+
+img.card-img-top {
+  width: 80%;
+  height: auto;
+}
+
+card-img-top {
+  width: 25%;
+  height: 25%;
 }
