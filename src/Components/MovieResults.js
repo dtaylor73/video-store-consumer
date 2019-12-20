@@ -45,8 +45,8 @@ class MovieResults extends Component {
           <div className="card-body">
             <p>{this.props.title}</p>
             <p>{this.props.overview}</p>
-            <button onClick={this.onSelectClick}>Add movie to rental library</button>
-            {this.state.addedMovie}
+            <button className='btn btn-primary' onClick={this.onSelectClick}>Add movie to rental library</button>
+            <p className='message'>{this.state.addedMovie}</p>
           </div>
         </div>
     );
