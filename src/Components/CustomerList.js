@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Customer from './Customer.js';
+import './CustomerList.css';
 export default class CustomerList extends Component {
   constructor(props) {
     super(props);
@@ -54,6 +55,9 @@ export default class CustomerList extends Component {
       <table class="table">
         <thead>
           <tr>
+            <th id="customer-list-header">Customer List</th>
+          </tr>
+          <tr>
             <th scope="col">Name</th>
             <th scope="col">Id</th>
             <th scope="col">Address</th>
@@ -61,10 +65,11 @@ export default class CustomerList extends Component {
             <th scope="col">State</th>
             <th scope="col">Phone</th>
             <th scope="col">Account_credit</th>
+            <th scope="col">Select</th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className='blue-text'>
           {customers}
         </tbody>
     </table>

@@ -17,13 +17,11 @@ class MovieResults extends Component {
   }
 
   onSelectClick = (event) => {
-  
     this.addMovieToRentalLibrary({
       title: this.props.title,
       overview: this.props.overview,
       image: this.props.image
     })
- 
   }
 
   addMovieToRentalLibrary = (movie) => {
@@ -32,25 +30,15 @@ class MovieResults extends Component {
     .then((response) => {
       console.log(response)
       {response.data.success ? this.setState({addedMovie: response.data.success}) : this.setState({addedMovie: response.data.failure})};
-      // this.setState({
-      //   addedMovie: response.data.success
-      // });
     })
     .catch((error) => {
-      // Use the same idea we had in our GET request
       this.setState({ error: error.message });
     });
   }
 
   render () {
     return (
-      // <div>
-      //   <p>{this.props.title}</p>
-      //   <p>{this.props.overview}</p>
-      //   <img src={this.props.image}/>
 
-      //   <button onClick={this.onSelectClick}>Add movie to rental library</button>
-      //   {this.state.addedMovie}
 
         <div className="card">
           <img className="card-img-top" src={this.props.image}/>
@@ -65,9 +53,5 @@ class MovieResults extends Component {
   }
 }
 
-
-MovieResults.propTypes = {
-
-};
-
 export default MovieResults;
+

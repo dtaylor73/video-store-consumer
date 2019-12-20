@@ -5,18 +5,16 @@ import axios from 'axios';
 const Customer = (props) => {
 
   return (
-    
-    <tr>
-      <td> {props.name}</td>
-      <td> {props.id}</td>
-      <td> {props.address}</td>
-      <td> {props.city}</td>
-      <td>{props.state}</td>
-      <td>{props.phone}</td>
-      <td>${props.account_credit}</td>
-      <button
-        className="customer__select" onClick={props.customerNameCallback} type="button">Select</button>
-    </tr>
+  <tr>
+    <td> {props.name}</td>
+    <td> {props.id}</td>
+    <td> {props.address}</td>
+    <td> {props.city}</td>
+    <td>{props.state}</td>
+    <td>{props.phone}</td>
+    <td>${props.account_credit}</td>
+    <td><button className="btn btn-primary" onClick={props.customerNameCallback} type="button">Select</button></td>
+  </tr>
   )
 }
 
