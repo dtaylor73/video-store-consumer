@@ -58,9 +58,11 @@ class RentalLibrary extends Component {
   render() {
     return (
       <section>
-        <h2>Rental Library</h2>
+        <h2 className='blue-text'>Rental Library</h2>
+        <section className="rentals">
         {this.makeMovieCollection()}
-      </section>
+        </section>
+    </section>
     )
   }
 }

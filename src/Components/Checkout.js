@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import './Checkout.css';
 
 export default class Checkout extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class Checkout extends Component {
    
 
       .then((response) => {
-        const successCheckout = `Movie has been checked out`
+        const successCheckout = 'Your Movie has been checked out'
         console.log(successCheckout)
 
         this.setState({checkoutMessage: successCheckout})
@@ -33,12 +34,11 @@ export default class Checkout extends Component {
 
   render() {
     return(
-      <section>
-        <h2> Checkout </h2>
-        <p> Selected Customer: {this.props.currentCustomer.name}</p>
-        <p> Selected Movie: {this.props.currentMovie.title}</p>
-        <button className="button" type="button" onClick={this.checkOutMovie}>Check out</button>
-        {this.state.checkoutMessage}
+      <section className="Checkout">
+        <div className='Checkout-item'> Selected Customer: {this.props.currentCustomer.name}</div>
+        <div className='Checkout-item'> Selected Movie: {this.props.currentMovie.title}</div>
+        <button className='Checkout-button' type='button' onClick={this.checkOutMovie}>Checkout</button>
+        <div className='white-text'>{this.state.checkoutMessage}</div>
       </section>
     )
   }

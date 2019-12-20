@@ -16,12 +16,14 @@ class Movie extends Component {
   render() {
     console.log(this.props)
     return (
-      
-      <section>
-        <p>{this.props.title}</p>
-        <p>{this.props.overview}</p>
-        <button onClick={this.onSelectClick}>Select</button>
-      </section>
+  
+    <div className="card">
+      <div className="card-body">
+        <h5 className='blue-text'>{this.props.title}</h5>
+        <p className='blue-text'>{this.props.overview}</p>
+        <button className='btn btn-primary' onClick={this.onSelectClick}>Select</button>
+      </div>
+    </div>
     )
   }
 }

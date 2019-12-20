@@ -1,28 +1,77 @@
-.App {
+
+
+.nav-item {
+  border-style: dashed;
+  background-color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.navigation-bar {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #A4C3B2;
+  height: 5rem;
+}
+
+.rentals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  width: 30%;
+  display: inline-block;
+  /* flex-wrap: wrap; */
+}
+
+img.card-img-top {
+  width: 80%;
+  height: auto;
+}
+
+card-img-top {
+  width: 25%;
+  height: 25%;
+}
+
+.alert {
+  color: green;
+}
+
+.movie-logo {
+  width: 500px;
+  padding-top: 125px;
   text-align: center;
+} 
+
+.blue-text {
+  color: #141B5B;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.white-text {
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.Checkout-button {
+  border-radius: 10px;
 }
 
-.App-intro {
-  font-size: large;
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
+
+
+
+
+
+
+

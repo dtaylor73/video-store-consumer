@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import MovieResults from './MovieResults'
-
-// From the movie search page, I can search for a movie by title from the external API
-// From the movie search results, I can add a movie from the search results to the rental library
+import './MovieSearch.css';
 
 class MovieSearch extends Component {
 
@@ -88,9 +86,8 @@ class MovieSearch extends Component {
       <section>
         <h2>Movie Search</h2>
 
-        <form onSubmit={this.onSubmitHandler}>
+        <form onSubmit={this.onSubmitHandler} className='movieform'>
 
-          <h3>Search Movie</h3>
           <div>
             <div>
               <label className='' htmlFor="movieTitle">Movie Title: </label>
@@ -103,7 +100,7 @@ class MovieSearch extends Component {
             </div>
           </div> 
           <input
-            className=''
+            className='btn btn-primary'
             type='submit'
             name='submit'
             value='submit'
