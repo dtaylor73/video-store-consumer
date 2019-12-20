@@ -14,8 +14,6 @@ class MovieResults extends Component {
     this.state = {
       addedMovie: ''
     }
-
-
   }
 
   onSelectClick = (event) => {
@@ -58,14 +56,14 @@ class MovieResults extends Component {
       //   {this.state.addedMovie}
 
         <div className="card">
-        <img className="card-img-top" src={this.props.image}/>
+          <img className="card-img-top" src={this.props.image}/>
           <div className="card-body">
-          <p>{this.props.title}</p>
-          <p>{this.props.overview}</p>
-          <button onClick={this.onSelectClick}>Add movie to rental library</button>
-          {this.state.addedMovie}
+            <p>{this.props.title}</p>
+            <p>{this.props.overview}</p>
+            <button onClick={this.onSelectClick}>Add movie to rental library</button>
+            {this.state.addedMovie}
           </div>
-      </div>
+        </div>
     );
   }
 }
